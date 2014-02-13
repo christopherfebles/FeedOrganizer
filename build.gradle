@@ -1,0 +1,54 @@
+import com.sun.j3d.utils.geometry.Project;
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'eclipse-wtp'
+apply plugin: 'war'
+apply plugin: 'cargo'
+
+repositories {
+    mavenCentral()
+}
+
+buildscript {
+	repositories {
+		jcenter()
+	}
+
+	dependencies {
+		classpath 'org.gradle.api.plugins:gradle-cargo-plugin:1.3'
+	}
+}
+
+dependencies {
+    
+	compile 'org.springframework:spring-core:3.2.6.RELEASE',
+			'org.springframework:spring-web:3.2.6.RELEASE',
+			'org.springframework:spring-jdbc:3.2.6.RELEASE',
+			'org.springframework:spring-webmvc:3.2.6.RELEASE',
+			'org.scribe:scribe:1.3.5',
+			'org.json:json:20131018',
+			'mysql:mysql-connector-java:5.1.28'
+			
+    providedCompile 'javax.servlet:servlet-api:2.5'
+	
+	runtime 'jstl:jstl:1.2'
+}
+
+cargo {
+	containerId = 'tomcat7x'
+	
+	deployable {
+		context = 'FeedOrganizer'
+	}
+
+	remote {
+		hostname = project.remoteServer
+		username = project.cargoUserName
+		password = project.cargoPassword
+		port = 80
+		protocol = 'http'
+	}
+}
+
+cargoRedeployRemote.dependsOn war

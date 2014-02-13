@@ -1,0 +1,65 @@
+@CHARSET "UTF-8";
+
+.listClass { 
+	list-style-type: none; 
+	margin: 0; 
+	padding: 0 0 2.5em; 
+	float: left; 
+	margin-right: 100px; 
+}
+
+/*#allFriendsList li {
+	margin: 0 5px 5px 5px; 
+	padding: 5px; 
+	font-size: 1.2em; 
+	width: 120px; 
+}
+
+*/
+.friendCard {
+	-moz-box-shadow: 10px 10px 5px #888;
+	-webkit-box-shadow: 10px 10px 5px #888;
+	box-shadow: 10px 10px 5px #888;
+	margin: 0 5px 5px 5px; 
+	padding: 5px; 
+	font-size: 1.2em; 
+	border-style: solid;
+}
+
+.emptyCard {
+	width: 279px;
+	height: 79px;
+}
+
+.twitterAvatar {
+	
+}
+
+.userName {
+	font-weight: bold;
+	font-size: large;
+}
+
+.screenName {
+	font-size: small;
+}
+
+.listMemberItem {
+	background-color: #CD5B45;
+}
+
+.allFriendsListItem {
+	background-color: #7AC5CD;
+}
+
+.placeholder { 
+	background-color: lightgray;
+}
+
+.selfItem {
+	background-color: #00FF00;
+}
+
+.cardInUse { 
+	background-color: lightgray;
+}
