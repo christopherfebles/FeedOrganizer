@@ -8,6 +8,8 @@ CREATE TABLE `Keys` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+DROP TABLE IF EXISTS `Users`;
+
 CREATE TABLE `Users` (
   `user_id` int(11) NOT NULL,
   `screen_name` varchar(15) NOT NULL,
